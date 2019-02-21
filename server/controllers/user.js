@@ -7,6 +7,10 @@ module.exports = {
             .then(function (user) {
                 var token
                 token = user.generateJwt();
+
+                var email = require('../lib/email');
+                email.activate_email(req.body.name, req.body.email, 'ajfsajfsahg');
+
                 res.status(200).json({ "token": token });
             }).catch(err => {
                 res.status(200).json(err);

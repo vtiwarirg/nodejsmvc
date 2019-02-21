@@ -14,5 +14,11 @@ CONFIG.db_password = process.env.DB_PASSWORD || 'vkt20383';
 
 CONFIG.jwt_encryption = process.env.JWT_ENCRYPTION || 'jwt_please_change';
 CONFIG.jwt_expiration = process.env.JWT_EXPIRATION || '10000';
+CONFIG.email_smtp_host = 'smtp.office365.com';
+CONFIG.email_smtp_port = '587';
+CONFIG.smtp_from_eamil = 'vtiwari@ishir.com';
+CONFIG.smtp_from_name = 'Virendra';
+CONFIG.alert_email = 'vtiwari@ishir.com';
+CONFIG.alert_email_name = 'Virendra';
 
 module.exports = CONFIG;

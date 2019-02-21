@@ -2,7 +2,15 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../server/models/').users;
 
-passport.use(new LocalStrategy({
+
+// =========================================================================
+// LOCAL LOGIN =============================================================
+// =========================================================================
+// we are using named strategies since we have one for login and one for signup
+// by default, if there was no name, it would just be called 'local'
+
+
+passport.use('local-login', new LocalStrategy({
     usernameField: 'email'
 },
     function (username, password, done) {
