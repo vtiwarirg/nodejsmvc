@@ -10,7 +10,7 @@ const sequelize = new Sequelize(CONFIG.db_name, CONFIG.db_user, CONFIG.db_passwo
   host: CONFIG.db_host,
   dialect: CONFIG.db_dialect,
   port: CONFIG.db_port,
-  operatorsAliases: false
+  // operatorsAliases: false
 });
 
 fs
@@ -19,7 +19,7 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(file => {
-    const model = sequelize['import'](path.join(__dirname, file));
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
     db[model.name] = model;
   });
 
