@@ -1,6 +1,6 @@
 # Nodejs MVC pattern using sequelize mysql database API
 
-To run, you just have MongoDB installed and running, and NodeJS installed.
+To run this app, mysql and nodejs need to be installed and running on your system.
 
 * Clone the repo
 * `npm install -g sequelize-cli` to run sequelize commond like to create migration file and seeder
